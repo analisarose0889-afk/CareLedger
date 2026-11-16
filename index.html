@@ -1040,8 +1040,7 @@ ${JSON.stringify(payloadData, null, 2)}
             const data = await response.json();
             const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
 
-            const formattedAiHtml = aiText.replace(/
-/g, '<br>');
+            const formattedAiHtml = aiText.replace(/\n/g, '<br>');
 
             return `
                 <div class="space-y-4">
